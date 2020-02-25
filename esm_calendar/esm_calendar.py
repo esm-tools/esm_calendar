@@ -389,17 +389,29 @@ class Date(object):
             A new date of year month day, hour minute, second
         """
 
-        negative = ["-" if _list[i] < 0  else "" for i in range(6)]
-        _list = [str(abs(element)) for element in _list ]
+        negative = ["-" if _list[i] < 0 else "" for i in range(6)]
+        _list = [str(abs(element)) for element in _list]
 
         if len(_list[0]) < 4:
-            _list[0] = _list[0].zfill(4)   
-        _list[1:6] = [element.zfill(2) if len(element) < 2 else element for element in _list[1:6] ]
+            _list[0] = _list[0].zfill(4)
+        _list[1:6] = [
+            element.zfill(2) if len(element) < 2 else element for element in _list[1:6]
+        ]
 
-        _list = [negative[i] + _list[i] for i in range(6) ]
+        _list = [negative[i] + _list[i] for i in range(6)]
 
         indate = (
-            _list[0] + "-" + _list[1] + "-" + _list[2] + "_" + _list[3] + ":" + _list[4] + ":" + _list[5]
+            _list[0]
+            + "-"
+            + _list[1]
+            + "-"
+            + _list[2]
+            + "_"
+            + _list[3]
+            + ":"
+            + _list[4]
+            + ":"
+            + _list[5]
         )
 
         return cls(indate)
