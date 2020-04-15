@@ -12,7 +12,7 @@ To install ESM Calendar, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install esm_calendar
+    $ pip install git+https://github.com/esm-tools/esm_calendar
 
 This is the preferred method to install ESM Calendar, as it will always install the most recent stable release.
 
@@ -32,13 +32,13 @@ You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/dbarbi/esm_calendar
+    $ git clone git://github.com/esm-tools/esm_calendar
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl -OJL https://github.com/dbarbi/esm_calendar/tarball/master
+    $ curl -OJL https://github.com/esm-tools/esm_calendar/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/dbarbi/esm_calendar
-.. _tarball: https://github.com/dbarbi/esm_calendar/tarball/master
+.. _Github repo: https://github.com/esm-tools/esm_calendar
+.. _tarball: https://github.com/esm-tools/esm_calendar/tarball/master
