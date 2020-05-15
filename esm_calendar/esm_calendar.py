@@ -175,6 +175,7 @@ class Calendar(object):
         TypeError
             Raised when you give an incorrect type for month
         """
+
         if isinstance(month, str):
             month = month.capitalize()  # Clean up possible badly formated month
             month = self.monthnames.index(month) + 1  # Remember, python is 0 indexed
@@ -797,9 +798,15 @@ class Date(object):
         ndate[2] = ndate[2] + ndate[3] // 24
         ndate[3] = ndate[3] % 24
 
+        ndate[0] = ndate[0] + (ndate[1] - 1) // 12
+        ndate[1] = (ndate[1] - 1) % 12 + 1
+
         while ndate[2] > self._calendar.day_in_month(ndate[0], ndate[1]):
             ndate[2] = ndate[2] - self._calendar.day_in_month(ndate[0], ndate[1])
             ndate[1] = ndate[1] + 1
+            ndate[0] = ndate[0] + (ndate[1] - 1) // 12
+            ndate[1] = (ndate[1] - 1) % 12 + 1
+
 
         ndate[0] = ndate[0] + (ndate[1] - 1) // 12
         ndate[1] = (ndate[1] - 1) % 12 + 1
