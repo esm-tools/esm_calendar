@@ -27,6 +27,18 @@ def find_remaining_minutes(seconds):
 # same...
 find_remaining_hours = find_remaining_minutes
 
+def date_range(start_date, stop_date, frequency):
+    if isinstance(start_date, str):
+        start_date = Date(start_date)
+    if isinstance(stop_date, str):
+        stop_date = Date(stop_date)
+    if isinstance(frequency, str):
+        stop_date = Date(frequency)
+    current_date = start_date
+    while current_date <= stop_date:
+        yield current_date
+        current_date += frequency
+
 
 class Dateformat(object):
     datesep = ["", "-", "-", "-", " ", " ", "", "-", "", "", "/"]
@@ -605,7 +617,7 @@ class Date(object):
         if diff[1] < 0:
             diff[0] = diff[0] - 1
 
-       
+
         while d2[0] > d1[0]:
             diff[0] += 1
             diff[1] += 12
