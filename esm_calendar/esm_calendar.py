@@ -33,7 +33,7 @@ def date_range(start_date, stop_date, frequency):
     if isinstance(stop_date, str):
         stop_date = Date(stop_date)
     if isinstance(frequency, str):
-        stop_date = Date(frequency)
+        frequency = Date(frequency)
     current_date = start_date
     while current_date <= stop_date:
         yield current_date
